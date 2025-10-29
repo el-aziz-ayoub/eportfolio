@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Aziz Ayoub - ENSEEIHT ePortfolio</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background: #f3f4f6;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #1e40af);
+      color: white;
+      text-align: center;
+      padding: 35px 10px;
+    }
+
+    nav {
+      background: #1e293b;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      display: block;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: #2563eb;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #1e40af;
+      border-bottom: 3px solid #1e40af;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1e293b;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    /* --- Welcome --- */
+    .welcome-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .welcome-photo img {
+      width: 230px;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .welcome-text {
+      flex: 2 1 400px;
+    }
+
+    .highlight {
+      color: #1e40af;
+      font-weight: bold;
+    }
+
+    /* --- Card Style --- */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      width: 270px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    /* --- Video box --- */
+    .media-box {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .media-box video {
+      width: 100%;
+      max-width: 750px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .cv-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 18px;
+      background: #1e40af;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .cv-button:hover {
+      background: #2563eb;
+    }
+
+    /* layout for two cv buttons */
+    .cv-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+  </style>
+
+  <script>
+    function showTab(tabId) {
+      const sections = document.querySelectorAll("section");
+      sections.forEach(s => (s.style.display = "none"));
+      document.getElementById(tabId).style.display = "block";
+      
+      // Try to load video when Career tab is shown
+      if (tabId === 'career') {
+        const video = document.getElementById('myVideo');
+        if (video) {
+          video.load();
+        }
+      }
+    }
+    window.onload = () => showTab("welcome");
+  </script>
+</head>
+<body>
+  <header>
+    <h1>El Aziz Ayoub</h1>
+    <p>Engineering Student – ENSEEIHT Toulouse | ePortfolio 2025–2026</p>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showTab('welcome')">Home</a>
+    <a href="#" onclick="showTab('engineering')">Engineering Courses</a>
+    <a href="#" onclick="showTab('mobility')">International Mobility</a>
+    <a href="#" onclick="showTab('civic')">Sustainability & Civic Engagement</a>
+    <a href="#" onclick="showTab('sports')">Sports & Activities</a>
+    <a href="#" onclick="showTab('career')">Career Development</a>
+    <a href="#" onclick="showTab('contact')">Contact</a>
+  </nav>
+
+  <!-- 🏠 Welcome -->
+  <section id="welcome">
+    <div class="welcome-container">
+      <div class="welcome-photo">
+        <img src="photo.jpg" alt="El Aziz Ayoub">
+      </div>
+      <div class="welcome-text">
+        <h2>Home 👋</h2>
+        <p>
+          Hello! My name is <span class="highlight">El Aziz Ayoub</span>, a Computer Science & Telecommunications student at
+          <strong>ENSEEIHT Toulouse</strong>.
+        </p>
+        <p>
+          Passionate about <span class="highlight">technology, software, and networks</span>, I aim to become an engineer capable of
+          creating intelligent and sustainable digital solutions.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Contact Info Card on Home -->
+    <div style="margin-top: 30px; padding: 25px; background: #f8fafc; border-radius: 10px; border: 2px solid #1e40af; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
+      <h3 style="color: #1e40af; margin-bottom: 15px; text-align: center; font-size: 24px;">📞 Contact Me</h3>
+      <div style="line-height: 2; font-size: 16px;">
+        <p style="margin: 8px 0;">
+          <strong>📧 Email:</strong> <a href="mailto:ayoub@example.com" style="color: #1e40af; text-decoration: none;">ayoub@example.com</a>
+        </p>
+        <p style="margin: 8px 0;">
+          <strong>💼 LinkedIn:</strong> <a href="https://www.linkedin.com/in/ayoub3zoz" target="_blank" style="color: #1e40af; text-decoration: none;">linkedin.com/in/ayoub3zoz</a>
+        </p>
+        <p style="margin: 8px 0;">
+          <strong>📱 Phone:</strong> <a href="tel:0759304884" style="color: #1e40af; text-decoration: none;">0759304884</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⚙️ Engineering Courses -->
+  <section id="engineering">
+    <h2>Engineering Courses & Projects</h2>
+    <p>
+      My engineering journey combines <strong>programming</strong>, <strong>telecommunications</strong>, and
+      <strong>data science</strong>. Here are some tools and skills I've developed:
+    </p>
+
+    <div class="card-container">
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python">
+        <h3>Python</h3>
+        <p>Data analysis, automation, and problem solving.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" alt="Ada">
+        <h3>Ada</h3>
+        <p>Structured programming for real-time applications.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2772/2772128.png" alt="SQL">
+        <h3>SQL</h3>
+        <p>Database design and data optimization.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🌍 International Mobility -->
+  <section id="mobility">
+    <h2>International Mobility 🌍</h2>
+    <p>
+      Exploring the world through academic exchanges is one of my goals.
+      Here are the destinations I’m most interested in:
+    </p>
+
+    <div class="card-container">
+      <div class="card">
+        <img src="https://flagcdn.com/w80/gb.png" alt="UK flag">
+        <h3>United Kingdom 🇬🇧</h3>
+        <p>Prestigious universities, innovation, and cultural diversity.</p>
+      </div>
+      <div class="card">
+        <img src="https://flagcdn.com/w80/ca.png" alt="Canada flag">
+        <h3>Canada 🇨🇦</h3>
+        <p>Friendly academic environment and strong tech industry.</p>
+      </div>
+      <div class="card">
+        <img src="https://flagcdn.com/w80/ch.png" alt="Switzerland flag">
+        <h3>Switzerland 🇨🇭</h3>
+        <p>World-class research and focus on sustainability and precision.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🌱 Sustainability & Civic Engagement -->
+  <section id="civic">
+    <h2>Sustainability & Civic Engagement 🌱</h2>
+    <p>
+      I believe engineers should contribute to a better and more sustainable society.
+    </p>
+
+    <div class="card-container">
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1754/1754436.png" alt="Environment">
+        <h3>Environment 🌍</h3>
+        <p>Reducing waste and promoting eco-friendly practices in daily life.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3771/3771325.png" alt="Volunteering">
+        <h3>Volunteering 🤝</h3>
+        <p>Helping student initiatives and community support programs.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/992/992700.png" alt="Ethics">
+        <h3>Ethics & Responsibility ⚖️</h3>
+        <p>Promoting responsible engineering through ethics and inclusion.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⚽ Sports & Activities -->
+  <section id="sports">
+    <h2>Sports & Other Activities ⚽</h2>
+    <p>
+      Outside academics, I value teamwork, creativity, and staying active.
+    </p>
+
+    <div class="card-container">
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046769.png" alt="Sports">
+        <h3>Sports 🏃‍♂️</h3>
+        <p>Regular football and running to maintain balance and discipline.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/4315/4315445.png" alt="Creativity">
+        <h3>Creativity 🎨</h3>
+        <p>Interested in design, AI art, and technology-based creation.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3771/3771330.png" alt="Community">
+        <h3>Community 🤝</h3>
+        <p>Participating in school associations and helping new students.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 💼 Career -->
+  <section id="career">
+    <h2>Career Development</h2>
+    <p>
+      This section highlights my professional objectives, CV, and video presentation.
+    </p>
+
+    <div class="card-container">
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135789.png" alt="Career Goal">
+        <h3>Career Goals 🎯</h3>
+        <p>Become a software or AI engineer contributing to innovative systems.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="Internships">
+        <h3>Internships 🧠</h3>
+        <p>Gain experience in IT, telecommunications, and AI sectors.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 30px; color: #1e40af; text-align: center;">📄 Download My CV</h3>
+    <div class="media-box">
+      <div class="cv-buttons">
+        <a class="cv-button" href="cv_fr.pdf" target="_blank">🇫🇷 CV Français</a>
+        <a class="cv-button" href="cv_en.pdf" target="_blank">🇬🇧 CV English</a>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 40px; color: #1e40af; text-align: center; font-size: 22px;">🎥 Video Presentation</h3>
+    <div class="media-box" style="padding: 20px; background: #f8fafc; border-radius: 10px; margin-top: 20px;">
+      <video 
+        id="myVideo"
+        width="750"
+        height="420"
+        controls 
+        preload="auto"
+        muted
+        playsinline
+        style="width: 100%; max-width: 750px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); background: #000; display: block; margin: 0 auto;">
+        <source src="./video.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
+        <source src="./video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p style="margin-top: 15px; color: #64748b; font-size: 14px;">
+        📹 My video presentation
+      </p>
+    </div>
+
+  </section>
+
+  <!-- 📞 Contact -->
+  <section id="contact">
+    <h2>Contact Me 📞</h2>
+    <p style="text-align: center;">
+      Feel free to reach out for collaboration, internship opportunities, or any inquiries!
+    </p>
+    
+    <div style="text-align: center; margin-top: 30px; font-size: 18px; line-height: 2;">
+      <p><strong> LinkedIn:</strong> <a href="https://www.linkedin.com/in/ayoub3zoz" target="_blank" style="color: #1e40af; text-decoration: none;">linkedin.com/in/ayoub3zoz</a></p>
+      <p><strong>📱 Phone:</strong> <a href="tel:0759304884" style="color: #1e40af; text-decoration: none;">0759304884</a></p>
+      <p><strong>📍 Location:</strong> Toulouse, France</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+      <div class="cv-buttons">
+        <a class="cv-button" href="cv_fr.pdf" target="_blank">🇫🇷 CV Français</a>
+        <a class="cv-button" href="cv_en.pdf" target="_blank">🇬🇧 CV English</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 - El Aziz Ayoub | ENSEEIHT ePortfolio
+  </footer>
+</body>
+</html>
